@@ -1,5 +1,5 @@
-﻿/**
-* @@@BUILDINFO@@@ NoTransparency.js !Version! Tue Mar 12 2019
+/**
+* @@@BUILDINFO@@@ NoTransparency.js !Version! Fri Apr 05 2019 
 */
 //Run the script in Isolation or Symbol Editing Mode
 //It makes a copy of dimmed items in locked "TEMP" layer with opacity = 100
@@ -37,8 +37,8 @@ function main() {
                 alert("Delete TEMP Layer before\nYou exit THIS mode!");
                 editedLayer.layers[0].layers.add();
                 editedLayer.layers[0].layers[0].name = "TEMP";
-                editedLayer.layers[0].layers[0].zOrder(ZOrderMethod.SENDTOBACK);
-                toLayer = editedLayer.layers[0].layers[0];
+                toLayer =  editedLayer.layers[0].layers[0];
+                toLayer.zOrder(ZOrderMethod.SENDTOBACK);
                 moveToTemp(toLayer);
                 break;
             default:
