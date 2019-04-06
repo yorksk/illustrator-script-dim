@@ -1,5 +1,5 @@
 /**
-* @@@BUILDINFO@@@ 4Symbol.js !Version! Sun Mar 11 2019
+* @@@BUILDINFO@@@ 4Symbol.js !Version! Fri Apr 05 2019 
 */
 
 // The script to bypass opacity in Adobe Illustrator Symbol Editing Mode(temporary solution)
@@ -12,7 +12,7 @@
 // 1: Save your project!!!
 // 2: Double click a Symbol or click a Symbol and "Edit Symbol"
 // 3: Start the script (it creates a locked layer and 
-// duplicates all deemed items in it at their original positions)
+// duplicates all dimmed items in it at their original positions)
 // 4: Edit your Symbol
 // 5: DELETE "TEMP" LAYER!!! 
 // 6: Exit Symbol Editing Mode
@@ -38,8 +38,8 @@ function main() {
             alert("Delete TEMP Layer Before Exit!");
             mainLayer.layers[0].layers.add();
             mainLayer.layers[0].layers[0].name = "TEMP";
-            mainLayer.layers[0].layers[0].zOrder(ZOrderMethod.SENDTOBACK);
-            toLayer = mainLayer.layers[0].layers[0];
+            toLayer =  mainLayer.layers[0].layers[0];
+            toLayer.zOrder(ZOrderMethod.SENDTOBACK);    
             moveToTemp(toLayer);
         }
         
